@@ -108,7 +108,7 @@ jobs:
         if: steps.proceed-versioning.conclusion == 'success'
         uses: anothrNick/github-tag-action@v1
         env:
-          GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: false
           CUSTOM_TAG: ${{ steps.package-version.outputs.current-version}}
           BRANCH_HISTORY: full
@@ -131,11 +131,11 @@ jobs:
         if: steps.proceed-versioning.conclusion == 'success'
         uses: softprops/action-gh-release@v2
         env:
-          GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           body: ${{ steps.git-cliff-partial.outputs.content }}
           tag_name: ${{ steps.git-cliff-partial.outputs.version }}
-          token: ${{ inputs.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: false
           draft: false
           make_latest: true
