@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.2] - 2025-03-05
+
+### 🚀 Features
+
+- *(bla)* Er4thtgfd
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump version, CHANGELOG.md generated
+
 ## [0.0.1] - 2025-03-05
 
 ### 🚀 Features
